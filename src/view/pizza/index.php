@@ -1,10 +1,3 @@
-<?php
-
-require '../../../config/constants.php';
-require PATH_CONTROLLER . 'pizza.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -20,10 +13,10 @@ require PATH_CONTROLLER . 'pizza.php';
         <div class="container-fluid">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<?= DIR_VIEW . 'home/index.php'; ?>">HOME</a>
+                <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_VIEW . 'pizza/index.php' ?>">PIZZA</a>
+                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'PizzaController.php' ?>">PIZZA</a>
             </li>
             </ul>
         </div>
@@ -32,7 +25,7 @@ require PATH_CONTROLLER . 'pizza.php';
     <div class="container mt-3">
         <h2 class="text-white">Pizza -
             <!--Botão para cadastrar novo usuário-->
-            <a href="<?= DIR_VIEW . 'pizza/add.php' ?>" class="btn btn-dark btn-sm">Nova Pizza</a>
+            <a href="<?= DIR_CONTROLLER . 'AddPizzaController.php' ?>" class="btn btn-dark btn-sm">Nova Pizza</a>
         </h2>       
         <table class="table table-dark table-striped">
             <thead>
@@ -45,7 +38,7 @@ require PATH_CONTROLLER . 'pizza.php';
             </thead>
             <tbody>
                 <?php
-                    foreach ($sql->fetchall() as $pizza) {
+                    foreach ($pizzas->fetchall() as $pizza) {
                         echo '<tr>';
                             echo '<td>'.$pizza['nome'].'</td>';
                             echo '<td>'.$pizza['preco'].'</td>';

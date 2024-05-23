@@ -17,7 +17,7 @@
                     Login
                 </div>
                 <div class="card-body">
-                    <form action="<?= DIR_CONTROLLER . 'login.php' ?>" method="post">
+                    <form action="<?= DIR_CONTROLLER . 'LoginController.php' ?>" method="post">
                         <input type="hidden" name="referer" value="login-process">
                         <div class="mb-3">
                             <label for="username" class="form-label">Nome de Usuário:</label>

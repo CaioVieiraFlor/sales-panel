@@ -1,4 +1,4 @@
 <?php
 
 require 'config/constants.php';
-require PATH_VIEW . 'login/index.php';
+require PATH_CONTROLLER . 'LoginController.php';

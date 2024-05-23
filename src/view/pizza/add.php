@@ -1,9 +1,3 @@
-<?php
-
-require '../../../config/constants.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -15,21 +9,21 @@ require '../../../config/constants.php';
 </head>
 
 <body class="bg-secondary" style="min-height: 100vh;">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<?= DIR_VIEW . 'home/index.php'; ?>">HOME</a>
+                <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_VIEW . 'pizza/index.php' ?>">PIZZA</a>
+                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'PizzaController.php' ?>">PIZZA</a>
             </li>
             </ul>
         </div>
     </nav>
 
     <div class="d-flex justify-content-center mt-5">
-        <form action="<?= DIR_CONTROLLER . 'addPizza.php' ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
+        <form action="<?= DIR_CONTROLLER . 'addPizzaController.php' ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
             <h2>CADASTRO DE PIZZA</h2>    
             <hr class="my-3">
             <div class="mb-3">

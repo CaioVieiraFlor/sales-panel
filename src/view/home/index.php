@@ -1,10 +1,3 @@
-<?php
-
-require '../../../config/constants.php';
-require PATH_CONTROLLER . 'home.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -20,10 +13,10 @@ require PATH_CONTROLLER . 'home.php';
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_VIEW . 'home/index.php'; ?>">HOME</a>
+                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= DIR_VIEW . 'pizza/index.php' ?>">PIZZA</a> <!-- <= Arrumar -->
+                <a class="nav-link" href="<?= DIR_CONTROLLER . 'PizzaController.php' ?>">PIZZA</a>
             </li>
         </ul>
 
@@ -38,7 +31,7 @@ require PATH_CONTROLLER . 'home.php';
                 Menu
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="<?= DIR_CONTROLLER . 'logout.php'; ?>">Logout</a></li>
+                <li><a class="dropdown-item" href="<?= DIR_CONTROLLER . 'LogoutController.php'; ?>">Logout</a></li>
             </ul>
         </div>
     </div>
