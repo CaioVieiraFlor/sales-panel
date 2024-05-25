@@ -10,9 +10,9 @@ create table user(
 
 insert user values (0, "Serginho", "serginho@email.com", "123456");
 
-create table pizza(
+create table product(
     cod int primary key auto_increment,
     nome varchar(50) not null,
     preco decimal(6,2) not null,
-    figura varchar(50) not null
+    figura varchar(250) not null
 );

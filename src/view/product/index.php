@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title>Aula_09 - PHP</title>
+  <title>Produtos dos simpaticos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,16 +16,15 @@
                 <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'PizzaController.php' ?>">PIZZA</a>
+                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTOS</a>
             </li>
             </ul>
         </div>
     </nav>
 
     <div class="container mt-3">
-        <h2 class="text-white">Pizza -
-            <!--Botão para cadastrar novo usuário-->
-            <a href="<?= DIR_CONTROLLER . 'AddPizzaController.php' ?>" class="btn btn-dark btn-sm">Nova Pizza</a>
+        <h2 class="text-white">Produto -
+            <a href="<?= DIR_CONTROLLER . 'AddProductController.php' ?>" class="btn btn-dark btn-sm">Novo Produto</a>
         </h2>       
         <table class="table table-dark table-striped">
             <thead>
@@ -38,15 +37,16 @@
             </thead>
             <tbody>
                 <?php
-                    foreach ($pizzas->fetchall() as $pizza) {
+                    foreach ($products as $product) {
+                        // echo '<pre>'; var_dump($product); exit;
                         echo '<tr>';
-                            echo '<td>'.$pizza['nome'].'</td>';
-                            echo '<td>'.$pizza['preco'].'</td>';
-                            echo '<td><img src="'.$pizza['figura'].'" alt="Imagem da Pizza" style="max-width: 100px; max-height: 100px;"></td>';
+                            echo '<td>'.$product['nome'].'</td>';
+                            echo '<td>'.$product['preco'].'</td>';
+                            echo '<td><img src="' . $product['figura'] . '" alt="Imagem do produto" style="max-width: 100px; max-height: 100px;"></td>';
                             echo '<td>
-                                    <a href=" ?cod=' . $pizza['cod'] . '">Editar</a> 
+                                    <a href="' . DIR_CONTROLLER . 'EditProductController?cod=' . $product['cod'] . '">Editar</a> 
                                     - 
-                                    <a href=" ?cod=' . $pizza['cod'] . '">Excluir</a>
+                                    <a href="' . DIR_CONTROLLER . 'DeleteProductController?cod=' . $product['cod'] . '">Excluir</a>
                                   </td>';
                         echo '<tr>';            
                     }
