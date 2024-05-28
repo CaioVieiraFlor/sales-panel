@@ -38,7 +38,6 @@
             <tbody>
                 <?php
                     foreach ($products as $product) {
-                        // echo '<pre>'; var_dump($product); exit;
                         echo '<tr>';
                             echo '<td>'.$product['nome'].'</td>';
                             echo '<td>'.$product['preco'].'</td>';

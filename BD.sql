@@ -14,5 +14,6 @@ create table product(
     cod int primary key auto_increment,
     nome varchar(50) not null,
     preco decimal(6,2) not null,
+    qtd int(50) not null,
     figura varchar(250) not null
 );
