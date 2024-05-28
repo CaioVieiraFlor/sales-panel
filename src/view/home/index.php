@@ -18,6 +18,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTO</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= DIR_CONTROLLER . 'SaleController.php' ?>">VENDA</a>
+            </li>
         </ul>
 
         <div class="ms-auto me-3">

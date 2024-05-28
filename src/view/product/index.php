@@ -12,12 +12,15 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTOS</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= DIR_CONTROLLER . 'SaleController.php' ?>">VENDA</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -31,6 +34,7 @@
             <tr>
                 <th>Nome</th>
                 <th>Preço</th>
+                <th>Qtd</th>
                 <th>Imagem</th>
                 <th>Ações</th>
             </tr>
@@ -39,11 +43,14 @@
                 <?php
                     foreach ($products as $product) {
                         echo '<tr>';
-                            echo '<td>'.$product['nome'].'</td>';
-                            echo '<td>'.$product['preco'].'</td>';
-                            echo '<td><img src="' . $product['figura'] . '" alt="Imagem do produto" style="max-width: 100px; max-height: 100px;"></td>';
-                            echo '<td>
+                            echo '<td class="align-middle">'.$product['nome'].'</td>';
+                            echo '<td class="align-middle">'.$product['preco'].'</td>';
+                            echo '<td class="align-middle">'.$product['qtd'].'</td>';
+                            echo '<td class="align-middle"><img src="' . $product['figura'] . '" alt="Imagem do produto" style="max-width: 100px; max-height: 100px;"></td>';
+                            echo '<td class="align-middle">
                                     <a href="' . DIR_CONTROLLER . 'EditProductController?cod=' . $product['cod'] . '">Editar</a> 
+                                    - 
+                                    <a href="' . DIR_CONTROLLER . 'AddSaleController?cod=' . $product['cod'] . '">Comprar</a> 
                                     - 
                                     <a href="' . DIR_CONTROLLER . 'DeleteProductController?cod=' . $product['cod'] . '">Excluir</a>
                                   </td>';

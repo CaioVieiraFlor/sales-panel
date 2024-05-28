@@ -1,21 +1,22 @@
 <?php
 
 require 'Controller.php';
-require PATH_MODEL . '/AddProductModel.php';
+require PATH_MODEL . '/ProductModel.php';
 
 class AddProductController extends Controller {
     public static function index() {
-        $addProductModel = new AddProductModel();
-
         session_start();
 
         try {
+            $productModel = new ProductModel();
+
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $name = isset($_POST['nome']) ? $_POST['nome'] : '';
                 $price = isset($_POST['preco']) ? $_POST['preco'] : '';
+                $qtd = isset($_POST['qtd']) ? intval($_POST['qtd']) : 0;
                 $image = isset($_FILES['figura']) ? $_FILES['figura'] : '';
     
-                if (empty($name) OR empty($price) OR empty($image)) {
+                if (empty($name) OR empty($price) OR empty($image) OR empty($qtd)) {
                     throw new Exception('Informações insuficientes para cadastro de produto, tente novamente.', 400);
                 }
     
@@ -30,7 +31,7 @@ class AddProductController extends Controller {
                     throw new Exception('Não foi possível salvar a imagem, tente novamente.', 400);
                 }
     
-                $result = $addProductModel->add($name, $price, $imageDir);
+                $result = $productModel->add($name, $price, $qtd, $imageDir);
                 if (!$result) {
                     throw new Exception('O cadastro falhou!', 400);
                 }
