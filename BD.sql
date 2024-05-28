@@ -1,5 +1,5 @@
-create database aula_09;
-use aula_09;
+create database sale_panel;
+use sale_panel;
 
 create table user(
     id int primary key auto_increment,
@@ -8,7 +8,7 @@ create table user(
     senha varchar(32) not null
 );
 
-insert user values (0, "Serginho", "serginho@email.com", "123456");
+insert user values (0, "Admin", "admin@email.com", "123456");
 
 create table product(
     cod int primary key auto_increment,
