@@ -29,11 +29,13 @@ class SaleModel extends Model {
     }
 
     public function add(string $price, $date) {
+        $formattedDate = date('Y-m-d', strtotime($date));
+
         $sql = "INSERT INTO venda SET preco = :price, data = :date";
         
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':price', $price);
-        $stmt->bindValue(':date', $date);
+        $stmt->bindValue(':date', $formattedDate);
         $stmt->execute();
     
         $saleCode = $this->pdo->lastInsertId();

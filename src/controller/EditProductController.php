@@ -26,10 +26,11 @@ class EditProductController extends Controller {
                 $dir = str_replace('\\', '/', PATH_ASSETS . 'img/');
                 $extension = strtolower(pathinfo($_FILES['figura']['name'], PATHINFO_EXTENSION));
                 $imageName = md5(time()) . '.' . $extension;
-                $imageDir = $dir . $imageName;
-                if (!move_uploaded_file($_FILES['figura']['tmp_name'], $imageDir)) {
+                $imagePath = $dir . $imageName;
+                if (!move_uploaded_file($_FILES['figura']['tmp_name'], $imagePath)) {
                     throw new Exception('Não foi possível editar a imagem, tente novamente.', 400);
                 }
+                $imageDir = '/sales-panel/assets/img/' . $imageName;
     
                 $result = $productModel->update($_GET['cod'], $name, $price, $qtd, $imageDir);
                 if (!$result) {

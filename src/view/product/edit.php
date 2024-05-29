@@ -17,6 +17,9 @@
                     <a class="nav-link active" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="<?= DIR_CONTROLLER . 'DashboardController.php'; ?>">DASHBOARD</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTO</a>
                 </li>
                 <li class="nav-item">
@@ -36,7 +39,7 @@
     </nav>
 
     <div class="d-flex justify-content-center mt-5">
-        <form action="<?= DIR_CONTROLLER . 'EditProductController?cod=' . $product['cod']; ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
+        <form action="<?= DIR_CONTROLLER . 'EditProductController.php?cod=' . $product['cod']; ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
             <h2>EDITAR PRODUTO</h2>
             <hr class="my-3">
             <div class="mb-3">

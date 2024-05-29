@@ -19,6 +19,9 @@
                     <a class="nav-link active" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="<?= DIR_CONTROLLER . 'DashboardController.php'; ?>">DASHBOARD</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTO</a>
                 </li>
                 <li class="nav-item">
@@ -38,25 +41,42 @@
     </nav>
 
     <div class="mt-4 p-5 bg-secondary text-white rounded">
-        <div id='myDiv' data-products="<?= $products ?>">
-            <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
+        <?php 
+        if (empty($products)) {
+            echo '<h1>Nenhuma venda realizada!</h1>';
+        } else {
+            echo "<div id='myDiv'>
+                <!-- Plotly chart will be drawn inside this DIV -->
+            </div>";
+        }
+        ?>
     </div>
 
     <script>
-        let productsQty = '<?= count($products); ?>';
-        console.log(products);
-
-        var trace1 = {
-            x: ['Zebras', 'Lions', 'Pelicans'],
-            y: [90, 40, 60],
+        let trace1 = {
+            x: [
+                '<?= $productNameFirst; ?>', 
+                '<?= $productNameSecond; ?>', 
+                '<?= $productNameThird; ?>', 
+                '<?= $productNameFourth; ?>', 
+                '<?= $productNameFifth; ?>', 
+                '<?= $productNameSixth; ?>'
+            ],
+            y: [
+                <?= $productTotalSaleFirst; ?>,
+                <?= $productTotalSaleSecond; ?>,
+                <?= $productTotalSaleThird; ?>,
+                <?= $productTotalSaleFourth; ?>,
+                <?= $productTotalSaleFifth; ?>,
+                <?= $productTotalSaleSixth; ?>
+            ],
             type: 'bar',
-            name: 'New York Zoo'
+            name: 'Vendas'
         };
 
-        var data = [trace1];
+        let data = [trace1];
 
-        var layout = {
+        let layout = {
             title: 'Vendas',
             showlegend: true
         };
