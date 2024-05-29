@@ -40,7 +40,6 @@
 
 <div class="mt-4 p-5 bg-secondary text-white rounded">
     <h1>Seja bem-vindo!</h1>
-    <p>A melhor Pizza da região</p>
 </div>
 
 </body>
