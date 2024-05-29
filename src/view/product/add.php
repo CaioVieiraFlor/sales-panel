@@ -24,10 +24,6 @@
                 </li>
             </ul>
 
-            <div class="ms-auto me-3">
-                <span class="text-light"><?= $nome ?></span>
-            </div>
-
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Menu

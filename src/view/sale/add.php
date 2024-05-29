@@ -27,30 +27,30 @@
     </nav>
 
     <div class="d-flex justify-content-center mt-5">
-        <form action="<?= DIR_CONTROLLER . 'addProductController.php' ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
-            <h2>CADASTRO DE PRODUTO</h2>
+        <form action="<?= DIR_CONTROLLER . 'addSaleController.php?cod=' . $product['cod'] . '' ?>" method="post" enctype="multipart/form-data" style="max-width: 500px; width: 100%;" class="bg-light mx-auto border border-2 p-4">
+            <h2>CADASTRO DE VENDA</h2>
             <hr class="my-3">
             <div class="mb-3">
                 <label class="form-label fw-bold">Nome:</label>
-                <input type="text" class="form-control" placeholder="Nome do Produto" name="nome" required>
+                <input type="text" class="form-control" value="<?= $product['nome'] ?>" name="nome" readonly>
             </div>
 
             <div class="mb-3 mt-3">
                 <label class="form-label fw-bold">Valor:</label>
-                <input type="text" class="form-control" placeholder="Entre com o valor" name="preco" required>
+                <input type="text" class="form-control" value="<?= $product['preco'] ?>" name="preco" readonly>
             </div>
 
             <div class="mb-3 mt-3">
                 <label class="form-label fw-bold">Qtd:</label>
-                <input type="text" class="form-control" placeholder="Entre com a quantidade" name="qtd" required>
+                <input type="number" class="form-control" placeholder="Entre com a quantidade" name="qtd" max="<?= $product['qtd'] ?>" required>
             </div>
 
             <div class="mb-3 mt-3">
                 <label class="form-label fw-bold">Imagem:</label>
-                <input type="file" name="figura" accept="image/*" required>
+                <img src="<?= $product['figura'] ?>" alt="Imagem do produto" style="max-width: 100px; max-height: 100px;">
             </div>
 
-            <button type="submit" class="btn btn-dark">Cadastrar</button>
+            <button type="submit" class="btn btn-dark">Comprar</button>
         </form>
     </div>
 </body>

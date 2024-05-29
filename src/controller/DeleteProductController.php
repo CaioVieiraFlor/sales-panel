@@ -1,17 +1,17 @@
 <?php
 
 require 'Controller.php';
-require PATH_MODEL . '/DeleteProductModel.php';
+require PATH_MODEL . '/ProductModel.php';
 
 class DeleteProductController extends Controller {
     public static function index() {
-        $deleteProductModel = new DeleteProductModel();
+        $productModel = new ProductModel();
 
         session_start();
 
         try {
             if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['cod'])) {
-                $result = $deleteProductModel->delete($_GET['cod']);
+                $result = $productModel->delete($_GET['cod']);
                 if (!$result) {
                     throw new Exception('Não foi possível excluir esse produto, tente novamente.', 400);
                     

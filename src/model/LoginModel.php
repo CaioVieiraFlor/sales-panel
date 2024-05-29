@@ -4,7 +4,7 @@ require 'Model.php';
 
 class LoginModel extends Model {
     public function login(string $email, string $senha) {
-        $sql = $this->pdo->query("SELECT * FROM user WHERE email = '$email' AND senha = '$senha' ");
+        $sql = $this->pdo->query("SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha' ");
 
         if ($sql->rowCount() > 0) {
             $dados = $sql->fetch();

@@ -12,38 +12,47 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTOS</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?= DIR_CONTROLLER . 'HomeController.php'; ?>">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= DIR_CONTROLLER . 'ProductController.php' ?>">PRODUTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= DIR_CONTROLLER . 'SaleController.php' ?>">VENDA</a>
+                </li>
             </ul>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="<?= DIR_CONTROLLER . 'LogoutController.php'; ?>">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
     <div class="container mt-3">
-        <h2 class="text-white">Venda -
-            <a href="<?= DIR_CONTROLLER . 'AddVendaController.php' ?>" class="btn btn-dark btn-sm">Nova venda</a>
-        </h2>       
+        <h2 class="text-white">Venda</h2>       
         <table class="table table-dark table-striped">
             <thead>
             <tr>
-                <th>Preço</th>
+                <th>Nome</th>
                 <th>Qtd</th>
-                <th>Ações</th>
+                <th>Preço</th>
+                <th>data</th>
             </tr>
             </thead>
             <tbody>
                 <?php
                     foreach ($sales as $sale) {
                         echo '<tr>';
-                            echo '<td>'.$sale['preco'].'</td>';
+                            echo '<td>'.$sale['nome'].'</td>';
                             echo '<td>'.$sale['qtd'].'</td>';
-                            echo '<td>
-                                    <a href="' . DIR_CONTROLLER . 'EditProductController?cod=' . $sale['cod'] . '">Editar</a> 
-                                    - 
-                                    <a href="' . DIR_CONTROLLER . 'DeleteProductController?cod=' . $sale['cod'] . '">Excluir</a>
-                                  </td>';
+                            echo '<td>'.$sale['preco'].'</td>';
+                            echo '<td>'.$sale['data'].'</td>';
                         echo '<tr>';            
                     }
                 ?>

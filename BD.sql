@@ -1,16 +1,16 @@
 create database sale_panel;
 use sale_panel;
 
-create table user(
+create table usuario(
     id int primary key auto_increment,
     nome varchar(50) not null,
     email varchar(50) not null,
     senha varchar(32) not null
 );
 
-insert user values (0, "Admin", "admin@email.com", "123456");
+insert usuario values (0, "Admin", "admin@email.com", "123456");
 
-create table product(
+create table produto(
     cod int primary key auto_increment,
     nome varchar(50) not null,
     preco decimal(6,2) not null,
@@ -26,8 +26,9 @@ create table venda(
 
 create table produto_venda(
     cod int primary key auto_increment,
-    venda_cod int,
-    produto_cod int,
-    foreign key (venda_cod) references venda(cod),
-    foreign key (produto_cod) references product(cod) 
+    cod_venda int,
+    cod_produto int,
+    qtd int,
+    foreign key (cod_venda) references venda(cod),
+    foreign key (cod_produto) references produto(cod) 
 );

@@ -1,7 +1,7 @@
 <?php
 
 class Model {
-    private string $dsn = "mysql:dbname=aula_09";
+    private string $dsn = "mysql:dbname=sale_panel";
     private string $dbuser = "root";
     private string $dbpass = "";
     protected ?object $pdo;

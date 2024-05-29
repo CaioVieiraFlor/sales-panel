@@ -48,11 +48,11 @@
                             echo '<td class="align-middle">'.$product['qtd'].'</td>';
                             echo '<td class="align-middle"><img src="' . $product['figura'] . '" alt="Imagem do produto" style="max-width: 100px; max-height: 100px;"></td>';
                             echo '<td class="align-middle">
-                                    <a href="' . DIR_CONTROLLER . 'EditProductController?cod=' . $product['cod'] . '">Editar</a> 
+                                    <a href="' . DIR_CONTROLLER . 'EditProductController.php?cod=' . $product['cod'] . '">Editar</a> 
                                     - 
-                                    <a href="' . DIR_CONTROLLER . 'AddSaleController?cod=' . $product['cod'] . '">Comprar</a> 
+                                    <a href="' . DIR_CONTROLLER . 'AddSaleController.php?cod=' . $product['cod'] . '">Comprar</a> 
                                     - 
-                                    <a href="' . DIR_CONTROLLER . 'DeleteProductController?cod=' . $product['cod'] . '">Excluir</a>
+                                    <a href="' . DIR_CONTROLLER . 'DeleteProductController.php?cod=' . $product['cod'] . '">Excluir</a>
                                   </td>';
                         echo '<tr>';            
                     }
