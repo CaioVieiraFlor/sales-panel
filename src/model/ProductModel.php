@@ -30,6 +30,12 @@ class ProductModel extends Model {
         return $this->pdo->query($sql) ? true : false;
     }
 
+    public function productSaleDelete(string $code) {
+        $sql = "DELETE FROM produto_venda WHERE cod_produto = '$code'";
+    
+        return $this->pdo->query($sql) ? true : false;
+    }
+
     public function delete(string $code) {
         $sql = "DELETE FROM produto WHERE cod = '$code'";
     

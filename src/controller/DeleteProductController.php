@@ -11,10 +11,14 @@ class DeleteProductController extends Controller {
 
         try {
             if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['cod'])) {
+                $productSaleResult = $productModel->productSaleDelete($_GET['cod']);
+                if (!$productSaleResult) {
+                    throw new Exception('Não foi possível excluir esse produto, tente novamente.', 400);
+                }
+                
                 $result = $productModel->delete($_GET['cod']);
                 if (!$result) {
                     throw new Exception('Não foi possível excluir esse produto, tente novamente.', 400);
-                    
                 }
 
                 echo "
